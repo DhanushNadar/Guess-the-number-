@@ -1,0 +1,28 @@
+
+n = 18
+no_guesses = 1
+
+print("Let's play a guessing game!")
+while True:
+    a = input("Enter 1 to play or 0 to quit: ")
+    if a == "1":
+        print("You have 9 guesses.")
+        while no_guesses <= 9:
+            guessnumber = int(input("Guess the number: "))
+            if guessnumber < n:
+                print("Increase your input by a little bit!")
+            elif guessnumber > n:
+                print("Decrease your input by a little bit!")
+            else:
+                print("Congratulations! You won!")
+                break
+            no_guesses += 1
+        if no_guesses > 9:
+            print("Game over! You lose.")
+        break
+    elif a == "0":
+        print("Thanks for playing!")
+        break
+    else:
+        print("Invalid input. Please enter 1 to play or 0 to quit.")
+        continue
